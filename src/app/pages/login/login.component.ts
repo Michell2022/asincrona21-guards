@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  login(){
+    Swal.fire('PROBANDO LOS MENSAJES')
+  }
 
 }
