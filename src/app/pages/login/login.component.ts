@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
   public formLogin!: FormGroup;
   reciboMasterx!: any[];
 
+  
+
+  condi = "true";
 
   constructor(private router: Router, private formBuilder: FormBuilder) { }
 
@@ -40,7 +43,8 @@ export class LoginComponent implements OnInit {
 
     for (let i of this.reciboMasterx) {
       if (i.usuario == this.formLogin.value.userInput && i.password == this.formLogin.value.passInput) {
-        this.router.navigate(['home']);
+        
+        localStorage.setItem('condicion', this.condi);
         alert("BIENVENIDO");
       } else {
         alert("INCORRECTOS");

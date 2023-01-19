@@ -8,16 +8,18 @@ import Swal from 'sweetalert2';
 })
 export class PermisosDingresoGuard implements CanActivate {
 
+  logeado!:string;
 
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     // return false;
 
+    this.logeado = String(localStorage.getItem('condicion'));
 
-    if (this.veriUser()) {
+    if (this.logeado == 'true') {
+
       return true;
     } else {
       Swal.fire('Para ingresar, primero debe logearse')
-      // this.router.navigate(['/login']);
       return false;
     }
   }

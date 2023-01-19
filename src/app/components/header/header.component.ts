@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  condicionFalse = "false";
+
+  logout(){
+    localStorage.setItem('condicion', this.condicionFalse)
+  }
 }
