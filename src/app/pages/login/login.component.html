@@ -2,16 +2,18 @@
 
     <div class="contenedor pt-10">
         <div class="formulario sm:w-1/2 md:w-2/6">
-            <h1>Login</h1>
-            <div>
-                <label for="">Username:</label>
-                <input type="text">
-            </div>
-            <div>
-                <label for="">Password:</label>
-                <input type="text">
-            </div>
-            <button class="registrarse" (click)="login()">Login</button>
+            <form [formGroup]="formLogin" id="form" (submit)="validar()">
+                <h1>Login</h1>
+                <div>
+                    <label for="userInput">Username:</label>
+                    <input type="text" name="userInput" id="userInput" #userInput formControlName="userInput">
+                </div>
+                <div>
+                    <label for="passInput">Password:</label>
+                    <input type="password" name="passInput" id="passInput" #passInput formControlName="passInput">
+                </div>
+                <button class="registrarse">Login</button>
+            </form>
         </div>
     </div>
 </div>

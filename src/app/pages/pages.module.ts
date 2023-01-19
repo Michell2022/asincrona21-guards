@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { BreakingComponent } from './breaking/breaking.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormularioComponent } from './formulario/formulario.component';
 
 
 
@@ -10,14 +12,18 @@ import { BreakingComponent } from './breaking/breaking.component';
   declarations: [
     HomeComponent,
     LoginComponent,
-    BreakingComponent
+    BreakingComponent,
+    FormularioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    FormularioComponent
   ]
 })
 export class PagesModule { }
